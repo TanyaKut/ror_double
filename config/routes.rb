@@ -6,11 +6,9 @@ root to: 'pages#index'
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :categories, only:[:index,:show]do
+  resources :categories, only:[:index,:show]
+  resources :items, only:[:show]
 
-end
-  resources :items, only:[:show] do
-
-  end
+  resources :orders, only:[:create,:index,:update,:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
