@@ -1,1 +1,4 @@
 <h1>Головна сторінка</h1>
+<%@categories.each do |categorie|%>
+<p><%=link_to categorie.name, category_path(categorie.id) %></p>
+<%end%>

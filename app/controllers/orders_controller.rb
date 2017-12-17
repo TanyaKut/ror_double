@@ -1,23 +1,23 @@
 class OrdersController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_order, only:[:update]
 
 	def index
 		@orders=Order.where(user_id: current_user.id)
 	end
 
 	def create
-		params[:order][:user_id]=current_user.id
-		params[:order][:item_id]=params[:id]
-		params[:order][:counts]=1
-		@order=Order.create(order_params)
+		@order=Order.create(user_id: current_user.id,item_id: params[:format], counts: 1)
+		redirect_to order_path
 	end
 
 	def update
-		@order.update
+		@order.update(order_paramse)
 	    redirect_to orders_path
 	end
 
 	def destroy
+		@order=Order.find(params[:id])
 		@order.destroy
 		redirect_to orders_path
 	end

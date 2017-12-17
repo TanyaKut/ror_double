@@ -1,5 +1,17 @@
-Тут повинне бути меню
-<%=link_to "HOme", root_path %>
-<%= link_to "about", about_path %>
-
-<%= link_to "Orders",orders_path %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%=link_to "HOme", root_path, class:"navbar-brand" %></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "about", about_path %></li>
+      <li></li>
+      <%if user_signed_in? %>
+<li><%= link_to "Logaut", destroy_user_session_path ,method: :delete%></li>
+<li><%= link_to "Orders",orders_path %></li>
+<%else%>
+<li><%= link_to "Login", new_user_session_path%></li>
+<%end%>
+    </ul>
+  </div>
+</nav>
