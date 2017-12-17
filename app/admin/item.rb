@@ -11,5 +11,5 @@ ActiveAdmin.register Item do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :name,:description,:counts,:categorie_id,:price
+permit_params :name,:description,:counts,:categorie_id,:price,:image
 end
