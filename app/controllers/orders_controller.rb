@@ -4,11 +4,12 @@ class OrdersController < ApplicationController
 
 	def index
 		@orders=Order.where(user_id: current_user.id)
+		@order=nil
 	end
 
 	def create
-		@order=Order.create(user_id: current_user.id,item_id: params[:format], counts: 1)
-		redirect_to order_path
+		@order=Order.create(user_id: current_user.id,item_id: params[:id], counts: 1)
+		redirect_to orders_path
 	end
 
 	def update
@@ -20,6 +21,20 @@ class OrdersController < ApplicationController
 		@order=Order.find(params[:id])
 		@order.destroy
 		redirect_to orders_path
+	end
+
+	def plus
+		@order=Order.where(user_id: current_user.id,item_id: params[:id]).first
+		@order.update(counts: @order.counts+1)
+		redirect_to orders_path	
+	end
+
+	def minus
+		@order=Order.where(user_id: current_user.id,item_id: params[:id]).first
+		if @order.counts>1
+		@order.update(counts: @order.counts-1)
+	    end
+	    redirect_to orders_path
 	end
 
 	private

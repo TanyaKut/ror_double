@@ -3,8 +3,8 @@
 <p><%= item.name %></p>
 <p><%=item.description%></p>
 <p>
-<%if @orders[item.id] == nil%>
-<%= link_to "add to orders", orders_path(item.id) ,method: :post %>
+<%if @orders == nil or @orders[item.id] == nil %>
+<%= link_to "add to orders", order_path(id: item.id), method: :post %>
 <%else%>
 <%= link_to "delete to orders", order_path(@orders[item.id].id) ,method: :delete %>
 <%end%></p>
