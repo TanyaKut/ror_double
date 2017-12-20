@@ -1,7 +1,11 @@
 <%if @orders != [] %>
 <% @orders.each do |order|%>
-<p><%=order.item.name%> кількість: <%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id)%></p> 
+
+<hr>
+<h4><%=order.item.name%> кількість: <%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id)%> </h4> 
+<hr>
+
 <%end%>
 <%else%>
-Альтернативний текст
+<h1>You have no orders. Choose some sweets :3</h1>
 <%end%>

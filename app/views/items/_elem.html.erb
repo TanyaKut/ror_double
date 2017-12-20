@@ -12,7 +12,7 @@
 					<%if @orders == nil or @orders[item.id] == nil %>
 					<%= link_to "add to my charm", order_path(id: item.id), method: :post %>
 					<%else%>
-					<%= link_to "delate", order_path(@orders[item.id].id) ,method: :delete %>
+					<%= link_to "delete", order_path(@orders[item.id].id) ,method: :delete %>
 					<%end%></p>
 				</div>
 			
