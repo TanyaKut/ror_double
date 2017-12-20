@@ -7,8 +7,8 @@ root to: 'pages#index'
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :categories, only:[:index,:show]
-  resources :items, only:[:show]
+  resources :categories, only:[:index,:show,:edit,:update]
+  resources :items, only:[:show,:edit,:update]
 
   resources :orders, only:[:index,:update,:destroy]
 

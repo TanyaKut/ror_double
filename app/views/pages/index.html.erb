@@ -1,4 +1,36 @@
-<h1>Головна сторінка</h1>
-<%@categories.each do |categorie|%>
-<p><%=link_to categorie.name, category_path(categorie.id) %></p>
-<%end%>
+<hr>
+<div class="container-fluid text-center bg-grey" style="background-color: #FFE5CC;">
+
+</br>
+	<h1>~ Choose the category ~</h1>
+</br>
+</div>
+<hr>
+
+<div>
+	<div class="container" style="padding-left: 3%;">
+	<div class="container-fluid text-center bg-grey">
+	<%@categories.each do |categorie|%>
+
+	  <div class="col-lg-4">
+	    	<div class="thumbnail">
+			
+			<p><strong><h3 style="color: #0772A1;">
+				<b><%= link_to categorie.name, category_path(categorie.id) %></b>
+				</h3></strong></p>
+			<p><%= categorie.description %> </p>
+			<button type="button" class="btn btn-primary">MORE</button>
+			
+			</br>
+			</div>
+
+	</div>
+
+	<%end%>
+	</div>
+	</div>
+</div>
+
+
+
+

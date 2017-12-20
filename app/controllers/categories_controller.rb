@@ -16,4 +16,17 @@ def show
 	end
 end
 
+def edit
+	@categorie=Categorie.find(params[:id])
+end
+
+def update
+	@categorie=Categorie.find(params[:id])
+    @categorie.update(cat_params)
+end
+
+private
+def cat_params
+params.require(:categorie).permit(:name,:description,:photo)
+end
 end

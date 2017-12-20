@@ -1,17 +1,22 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%=link_to "HOme", root_path, class:"navbar-brand" %></a>
+     <b class="navbar-brand">DoubleHead Sweet Factory</b> 
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to "about", about_path %></li>
-      <li></li>
-      <%if user_signed_in? %>
-<li><%= link_to "Logaut", destroy_user_session_path ,method: :delete%></li>
-<li><%= link_to "Orders",orders_path %></li>
-<%else%>
-<li><%= link_to "Login", new_user_session_path%></li>
-<%end%>
+      <li><%= link_to "SHOP", root_path %></li>
+      <li><%= link_to "MY CHARM",orders_path %></li>
+      <li><%= link_to "ABOUT US",about_path %></li>
     </ul>
+<div style="text-align: right; padding-top: 15px;">
+<%if user_signed_in? %>
+
+<%= link_to  destroy_user_session_path ,method: :delete do%><i class="glyphicon glyphicon-log-out"></i><%end%>
+<%else%>
+<%= link_to new_user_session_path do%><i class="glyphicon glyphicon-log-in"></i><%end%>
+<%end%>
+</div>
   </div>
 </nav>
+<span style="margin-left: 37%;"><img src="/images/logo.png"  height="300" width="300"></span>
+

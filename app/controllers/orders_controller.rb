@@ -3,8 +3,9 @@ class OrdersController < ApplicationController
 	before_action :set_order, only:[:update]
 
 	def index
-		@orders=Order.where(user_id: current_user.id)
-		@order=nil
+	@orders=[];
+    @orders=Order.where(user_id: current_user.id)
+    @order=nil
 	end
 
 	def create
@@ -46,5 +47,7 @@ class OrdersController < ApplicationController
 	def set_order
 		@order=Order.find(params[:id])
 	end
+
+
 end
 	

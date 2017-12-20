@@ -11,5 +11,5 @@ ActiveAdmin.register Categorie do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :name,:description
+permit_params :name,:description,:photo_file_name,:photo_content_type,:photo_file_size,:photo_updated_at
 end
