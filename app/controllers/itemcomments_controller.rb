@@ -1,0 +1,2 @@
+class ItemcommentsController < ApplicationController
+end

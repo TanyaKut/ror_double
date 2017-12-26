@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
 	before_action :set_order, only:[:update]
 
 	def index
-	@orders=[];
-    @orders=Order.where(user_id: current_user.id)
-    @order=nil
+		@orders=[];
+    	@orders=Order.where(user_id: current_user.id)
+   	 @order=nil
 	end
 
 	def create
@@ -41,8 +41,9 @@ class OrdersController < ApplicationController
 	def confirm
 		@orders=Order.where(user_id: current_user.id)
 		@orders.each do |order|
-			order.update(stat: true)
+			order.update(stats: true)
 		end
+		redirect_to root_path
 	end
 
 	private
