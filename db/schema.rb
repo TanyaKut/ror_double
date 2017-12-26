@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220095644) do
+ActiveRecord::Schema.define(version: 20171226212040) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20171220095644) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "itemcomments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "category_id"
+    t.integer "item_id"
+    t.string "body"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|

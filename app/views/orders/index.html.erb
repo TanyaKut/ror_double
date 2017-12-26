@@ -10,8 +10,8 @@
 
 
 <%if order.stats == false %>
-<%= datetime_select( order.oriental_at , confirm_path , default: 1.days.from_now) %>
-
+<%= datetime_select( order.oriental_at ,url: update_path , default: 1.days.from_now ) %>
+<% ## тут нада придумати як це пофыксити %>
 <% end %>
 
 <p><%= link_to "delete", order_path(order.id) ,method: :delete %></p>

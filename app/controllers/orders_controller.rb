@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@order=Order.create(user_id: current_user.id,item_id: params[:id], counts: 1)
+		@order=Order.create(user_id: current_user.id, item_id: params[:id], counts: 1)
 		redirect_to orders_path
 	end
 

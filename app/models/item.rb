@@ -3,4 +3,5 @@ class Item < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	belongs_to :categorie
 	has_many :orders
+	has_many :itemcomments
 end
