@@ -2,10 +2,13 @@
 <% @orders.each do |order|%>
 
 <hr>
-<h4><%=order.item.name%> кількість: <%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id)%> </h4> 
+<h4><%=order.item.name%> кількість: <%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id)%> </h4> <%= link_to "delete", order_path(order.id) ,method: :delete %>
 <hr>
 
 <%end%>
 <%else%>
 <h1>You have no orders. Choose some sweets :3</h1>
+<%end%>
+<%=form_for :conf, url: confirm_path  do |f|%>
+<p><%= f.submit "Confirm order"%></p>
 <%end%>

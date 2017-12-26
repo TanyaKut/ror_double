@@ -38,6 +38,13 @@ class OrdersController < ApplicationController
 	    redirect_to orders_path
 	end
 
+	def confirm
+		@orders=Order.where(user_id: current_user.id)
+		@orders.each do |order|
+			order.update(stat: true)
+		end
+	end
+
 	private
 
 	def order_params

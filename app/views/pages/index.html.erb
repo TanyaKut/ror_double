@@ -19,7 +19,7 @@
 				<b><%= link_to categorie.name, category_path(categorie.id) %></b>
 				</h3></strong></p>
 			<p><%= categorie.description %> </p>
-			<button type="button" class="btn btn-primary">MORE</button>
+			<p><%= link_to " MORE ", category_path(categorie.id), class: "btn btn-default"%></p>
 			
 			</br>
 			</div>
