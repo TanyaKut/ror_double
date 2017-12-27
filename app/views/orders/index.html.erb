@@ -1,3 +1,4 @@
+<h1 style="text-align: center;">~ Your charm ~</h1>
 <%if @orders != [] %>
 <% @orders.each do |order|%>
 
@@ -6,21 +7,27 @@
 <% end %>
 
 <hr>
-<h4><%=order.item.name%> counts: <%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id) %> Status of our order: <%= order.stats%>  </h4> 
-
-
+<h4> My charm: <b style="color: green;"><%=order.item.name%></b></h4>
+<h4> Counts: <b style="color: green;"><%=link_to "+",plus_path(order.item.id)%>|<%=order.counts%>|<%=link_to "-", minus_path(order.item.id) %>  </b> </h4> 
+<h4> Category: <b style="color: green;"><%= order.item.categorie.name %></b></h4> 
+<br/>
+<b><h6>Status of our order:  <%= order.stats%> </h6></b>
 <%if order.stats == false %>
 <%= datetime_select( order.oriental_at ,url: update_path , default: 1.days.from_now ) %>
 <% ## тут нада придумати як це пофыксити %>
 <% end %>
+<div style="text-align: center;">
+<%= link_to "Delete", order_path(order.id), class: "btn btn-default" ,method: :delete %> 
 
-<p><%= link_to "delete", order_path(order.id) ,method: :delete %></p>
+<%= link_to "Confirm", confirm_path, class: "btn btn-default"%>
+</div>
 <hr>
-<%= link_to " confirm ", confirm_path, class: "btn btn-default"%>
 <%end%>
 <%else%>
-<h1>You have no orders. Choose some sweets :3</h1>
+<h1 style="text-align: center; color: green;">You have no orders. Choose some sweets :3</h1>
 <%end%>
+
+
 
 
 
