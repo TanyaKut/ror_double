@@ -18,7 +18,7 @@ redirect_to item_path(params[:item_id])
 end
 
 	private
-	def postcomments_params
+	def itemcomments_params
 		params.require(:itemcomment).permit(:user_id, :item_id, :text)
 
 	end

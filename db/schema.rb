@@ -56,10 +56,8 @@ ActiveRecord::Schema.define(version: 20171226212040) do
 
   create_table "itemcomments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "category_id"
     t.integer "item_id"
-    t.string "body"
-    t.string "title"
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

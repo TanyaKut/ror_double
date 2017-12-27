@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 
 	def show
 		@item=Item.find(params[:id])
-		@order=Order.where(item_id: item,stats: false).first
+		@order=Order.where(item_id: @item,stats: false).first
+		@comments=Itemcomment.where(item_id: @item.id)
 	end
 
 	def edit
