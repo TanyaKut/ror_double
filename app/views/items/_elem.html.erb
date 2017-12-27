@@ -1,24 +1,23 @@
 
 
-	<div class="container">
-		<div class="container-fluid text-center bg-grey">
+	
+		
 			<div class="col-lg-4">
 				<div class="thumbnail">
 					<%= image_tag item.image.url, width: 300, height: 200 %>
 					<p><strong><h3 style="color: #0772A1;"></h3></strong></p>
-					<h3><%= item.name %></h3>
+					<h3 style="text-align: center;">| <%= item.name %> |</h3>
 					<p><%=item.description%></p>
-					<h4>Price: <span style="color: green;"><%= item.price %> $</span></h4>
-					<%if @orders == nil or @orders[item.id] == nil %>
-					<%= link_to "add to my charm", order_path(id: item.id), method: :post %>
+					<h4 style="text-align: center;">Price: <span style="color: green;"><%= item.price %> $</span></h4>
+					<p style="text-align: center;"><%if @orders == nil or @orders[item.id] == nil %>
+					<%= link_to "add to my charm", order_path(id: item.id), class: "btn btn-default", method: :post %>
 					<%else%>
-					<%= link_to "delete", order_path(@orders[item.id].id) ,method: :delete %>
+					<%= link_to "delete", order_path(@orders[item.id].id), class: "btn btn-default", method: :delete %>
 					<%end%></p>
 				</div>
 			
 			</div>
 		
-		</div>
-	</div>
+	
 
 
