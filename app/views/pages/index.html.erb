@@ -2,39 +2,6 @@
 <div class="container-fluid text-center bg-grey" style="background-color: #FFE5CC;">
 
 </br>
-	<h1>~ Choose the category ~</h1>
-</br>
-</div>
-<hr>
-
-<div>
-	<div class="container" style="padding-left: 3%;">
-	<div class="container-fluid text-center bg-grey">
-	<%@categories.each do |categorie|%>
-
-	  <div class="col-lg-4">
-	    	<div class="thumbnail">
-			
-			<p><strong><h3 style="color: #0772A1;">
-				<b><%= link_to categorie.name, category_path(categorie.id) %></b>
-				</h3></strong></p>
-			<p><%= categorie.description %> </p>
-			<p><%= link_to " MORE ", category_path(categorie.id), class: "btn btn-default"%></p>
-			
-			</br>
-			</div>
-
-	</div>
-
-	<%end%>
-	</div>
-	</div>
-</div>
-
-<hr>
-<div class="container-fluid text-center bg-grey" style="background-color: #FFE5CC;">
-
-</br>
 	<h1>~ Happy photo from happy clients ~</h1>
 </br>
 </div>
@@ -85,4 +52,39 @@
     <span class="sr-only">Next</span>
   </a>
 </div> 
+
+
+
+<hr>
+<div class="container-fluid text-center bg-grey" style="background-color: #FFE5CC;">
+
+</br>
+	<h1>~ Choose the category ~</h1>
+</br>
+</div>
+<hr>
+
+<div>
+	<div class="container" style="padding-left: 3%;">
+	<div class="container-fluid text-center bg-grey">
+	<%@categories.each do |categorie|%>
+
+	  <div class="col-lg-4">
+	    	<div class="thumbnail">
+			
+			<p><strong><h3 style="color: #0772A1;">
+				<b><%= link_to categorie.name, category_path(categorie.id) %></b>
+				</h3></strong></p>
+			<p><%= categorie.description %> </p>
+			<p><%= link_to " MORE ", category_path(categorie.id), class: "btn btn-default"%></p>
+			
+			</br>
+			</div>
+
+	</div>
+
+	<%end%>
+	</div>
+	</div>
+</div>
 
